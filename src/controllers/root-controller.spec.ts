@@ -27,7 +27,7 @@ describe('root route', () => {
     await getRoot(mockRequest, spyResponse);
     expect(statusSpy).toHaveBeenCalledWith(200);
     expect(sendSpy).toHaveBeenCalledWith(
-      'Welcome to the Condé Nast Typescript bootstrap project.'
+      'Welcome to the Typescript bootstrap project.'
     );
     expect(mockNext).not.toHaveBeenCalled();
   });

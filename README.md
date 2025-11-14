@@ -42,3 +42,4 @@ This project usses semantic-releasee
 **to run the commit check:**
 
 `make lintCommit`
+
