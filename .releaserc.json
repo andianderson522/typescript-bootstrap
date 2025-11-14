@@ -3,7 +3,7 @@
     "main"
   ],
   "debug": "true",
-  "repositoryUrl": "https://github.com/CondeNast/typescript-bootstrap.git",
+  "repositoryUrl": "https://github.com/andianderson522/typescript-bootstrap.git",
   "preset": "conventionalcommits",
   "plugins": [
     [
