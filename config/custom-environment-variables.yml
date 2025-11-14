@@ -1,0 +1,15 @@
+environment: ENVIRONMENT
+application:
+  port: APPLICATION_PORT
+  host: APPLICATION_HOST
+Logger:
+  level: LOG_LEVEL
+  type: LOG_TYPE
+default_secret:
+  region: SECRET_REGION
+  secret_id: SECRET_ID
+  is_aws: SECRET_IS_AWS
+  secret_path: SECRET_PATH
+datadog:
+  prefix: DATADOG_PREFIX
+  api_key: DATADOG_API_KEY

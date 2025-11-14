@@ -1,0 +1,7 @@
+/dist
+/node_modules
+/.idea
+/coverage
+.testcache
+.eslintcache
+.DS_Store

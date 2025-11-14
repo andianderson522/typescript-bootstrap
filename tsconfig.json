@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "*": ["types/*"] },
+    "alwaysStrict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["ES2022"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "types": ["node", "jest"],
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ES2022",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/__mocks__",
+    "src/**/int-test-args.ts",
+    "bin",
+    "test",
+    "types",
+    "jest-slow.config.ts"
+  ],
+  "ts-node": { "files": true, "compiler": "typescript", "typeCheck": true }
+}

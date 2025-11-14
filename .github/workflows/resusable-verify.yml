@@ -1,0 +1,58 @@
+name: Code Verification
+
+on:
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
+
+
+concurrency: ${{ github.repository }}
+
+permissions:
+  pull-requests: read
+  id-token: write
+  contents: write
+
+jobs:
+  verify:
+    name: Verify Code
+    runs-on:
+      group: arm
+    continue-on-error: false
+    steps:
+    # # environment:
+    #   # name: gp-nonprod
+    # # env:
+    #   # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #   # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Setup
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          registry-url: https://registry.npmjs.org
+          cache: 'npm'
+      - name: Install Dependencies
+        run: make install
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Run Unit Tests
+        run: make unitTest
+      - name: Run Integration Tests
+        run: |
+          # docker compose -f ./docker/docker-compose.yml up -d
+          # docker ps
+          # timeout 22 sh -c 'until curl -s http://localhost:9200; do sleep 1; done'
+          # ./mappings/schema-update.sh
+          # curl -s http://localhost:9200
+          # curl -s http://localhost:9200/_cat/indices
+          make integrationTest  
+          # docker compose -f ./docker/docker-compose.yml down
+      - name: Run Linter
+        run: make lintCode
+      - name: Run Semantic check
+        run: make lintCommit
+        

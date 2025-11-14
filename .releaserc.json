@@ -1,0 +1,124 @@
+{
+  "branches": [
+    "main"
+  ],
+  "debug": "true",
+  "repositoryUrl": "https://github.com/CondeNast/typescript-bootstrap.git",
+  "preset": "conventionalcommits",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "releaseRules": [
+          {
+            "type": "revert",
+            "scope": "*",
+            "release": "patch"
+          },
+          {
+            "type": "refactor",
+            "scope": "*",
+            "release": "patch"
+          },
+          {
+            "type": "build",
+            "scope": "*",
+            "release": "patch"
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "presetConfig": {
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "perf",
+              "section": "Performance Improvements"
+            },
+            {
+              "type": "revert",
+              "section": "Reverts"
+            },
+            {
+              "type": "docs",
+              "section": "Documentation",
+              "hidden": false
+            },
+            {
+              "type": "style",
+              "section": "Styles",
+              "hidden": false
+            },
+            {
+              "type": "chore",
+              "section": "Miscellaneous Chores",
+              "hidden": false
+            },
+            {
+              "type": "refactor",
+              "section": "Code Refactors",
+              "hidden": false
+            },
+            {
+              "type": "test",
+              "section": "Tests",
+              "hidden": false
+            },
+            {
+              "type": "build",
+              "section": "Build System",
+              "hidden": false
+            },
+            {
+              "type": "ci",
+              "section": "CI/CD",
+              "hidden": false
+            },
+            {
+              "type": "none",
+              "hidden": true
+            },
+            {
+              "type": "noop",
+              "hidden": true
+            }
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false,
+        "pkgRoot": "."
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}

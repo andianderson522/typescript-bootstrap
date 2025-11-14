@@ -1,0 +1,17 @@
+environment: 'default'
+application:
+  port: 8080
+  host: '0.0.0.0'
+Logger:
+  # 0: silly, 1: trace, 2: debug, 3: info, 4: warn, 5: error, 6: fatal
+  level: 5
+  type: pretty
+default_secret:
+  region: us-east
+  secret_id: id
+  is_aws: false
+  secret_path: ''
+datadog:
+  prefix: 'typescript-bootstrap.'
+  api_key: ''
+
