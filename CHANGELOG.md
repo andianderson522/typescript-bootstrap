@@ -1,3 +1,13 @@
+## [2.0.0](https://github.com/andianderson522/typescript-bootstrap/compare/v1.0.0...v2.0.0) (2025-12-16)
+
+### ⚠ BREAKING CHANGES
+
+* versioning
+
+### Features
+
+* Update to next major ([8473040](https://github.com/andianderson522/typescript-bootstrap/commit/84730407c16928827a9f0a1561f4b0e76c3173d9))
+
 ## 1.0.0 (2025-12-16)
 
 ### Bug Fixes
