@@ -5,3 +5,4 @@
 .testcache
 .eslintcache
 .DS_Store
+.vscode
