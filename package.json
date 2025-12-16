@@ -1,6 +1,6 @@
 {
   "name": "typescript-bootstrap-app",
-  "version": "1.4.1",
+  "version": "1.0.0",
   "description": "This repository is a bootstrap for typescript projects",
   "engineStrict": true,
   "engines": {
