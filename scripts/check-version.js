@@ -2,7 +2,7 @@
 const fs = require('fs');
 
 const nvmVersion = fs.readFileSync('.nvmrc').toString().trim();
-const desired = `${nvmVersion}`;
+const desired = `v${nvmVersion}`;
 const running = process.version;
 
 if (!running.startsWith(desired)) {

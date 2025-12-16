@@ -4,8 +4,8 @@
   "description": "This repository is a bootstrap for typescript projects",
   "engineStrict": true,
   "engines": {
-    "npm": "10.9.2",
-    "node": "=22.15.0"
+    "npm": "11.x",
+    "node": "=24.x"
   },
   "main": "dist/main.js",
   "repository": {
