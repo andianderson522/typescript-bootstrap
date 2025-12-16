@@ -43,3 +43,4 @@ This project usses semantic-releasee
 
 `make lintCommit`
 
+
