@@ -1,0 +1,29 @@
+name: Verify Code
+
+on:
+  push:
+    branches: 
+      - "*"
+      - "!main"
+
+concurrency:
+  group: ${{ github.repository }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24' 
+    - name: Install dependencies
+      run: npm ci 
+    - name: Run TypeScript compiler check (tsc)
+      run: make build
+    - name: Run tests and linter
+      run: make test
+      continue-on-error: false
