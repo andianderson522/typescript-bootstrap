@@ -37,7 +37,7 @@ depListUpdates:
 	npx ncu -m --enginesNode --peer --format group --reject '@hapi/hapi','@types/hapi__hapi'
 
 depCheck:
-	npx depcheck --ignores='jest-*','ts-node','npm-check-updates','depcheck','@semantic-release/*','@commitlint/*','eslint-plugin-prettier','eslint-import-resolver-typescript'
+	npx depcheck --ignores='jest-*','ts-node','npm-check-updates','depcheck','@semantic-release/*','@commitlint/*','conventional-changelog-conventionalcommits','eslint-plugin-prettier','eslint-import-resolver-typescript'
 
 deploy:
 	$(MAKE) print_banner MSG="Running Deploy"
