@@ -10,7 +10,7 @@
   "main": "dist/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CondeNast/typescript-bootstrap.git"
+    "url": "https://github.com/andianderson522/typescript-bootstrap.git"
   },
   "private": true,
   "keywords": [],
